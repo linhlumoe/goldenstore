@@ -5,7 +5,7 @@ class BaseUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
   # include CarrierWave::MiniMagick
   # Choose what kind of storage to use for this uploader:
-  # storage :file
+  storage :file if Rails.env.test?
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

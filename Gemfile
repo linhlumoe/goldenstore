@@ -172,7 +172,7 @@ group :test do
   # specialized in json api testing
   gem 'airborne'
   # to be used with Code Climate
-  # gem 'codeclimate-test-reporter'
+  gem 'codeclimate-test-reporter'
   gem 'webmock'
   gem 'timecop'
 end
