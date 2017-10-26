@@ -1,0 +1,13 @@
+.page.about
+  .row
+    .col-sm-12
+      blockquote
+        p Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin’ caught in the rain.)
+        br
+        h3 Site user graph
+        = line_chart User.group_by_month(:created_at).count
+        br
+        h3 Admin
+        - if User.admin.present?
+          = image_tag User.admin&.avatar&.url, class: 'img-thumbnail'
+

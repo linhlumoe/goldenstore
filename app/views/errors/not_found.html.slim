@@ -1,0 +1,11 @@
+.error-template
+  h1
+    | Oops!
+  h2
+    | 404 Not Found
+  .error-details
+    | Sorry, an error has occured, Requested page not found!
+  .error-actions
+    = link_to root_path, class: 'btn btn-primary btn-lg' do
+      span.glyphicon.glyphicon-home
+      | Take Me Home
