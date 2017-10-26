@@ -188,7 +188,7 @@ gem 'pg'
 # frontend javascript bugs tracker
 gem 'rollbar'
 # bakend exception listener
-gem 'sentry-raven'
+# gem 'sentry-raven'
 # if we need to schedule cronjob
 # gem 'whenever', :require => false
 # to generate fake data for demo
