@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  # post 'category/create'
+  resources :categories do
+    collection do
+      get :crawl_categories
+    end
+  end
+
   devise_for :users
 
   match '/contacts', to: 'contacts#new', via: 'get'

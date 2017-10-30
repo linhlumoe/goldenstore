@@ -1,9 +1,12 @@
 /! Page Content
-.container
-  = render 'layouts/breadcrumbs'
-  .row
-    = render 'aside'
-    = render 'content'
-    
+section.home
+  .container
+    = render 'layouts/breadcrumbs'
+    .row
+      .col-lg-3
+        = render 'aside'
+      .col-lg-9
+        = render 'content'
+
   /! /.row
 /! /.container
