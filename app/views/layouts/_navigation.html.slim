@@ -1,5 +1,5 @@
 /! Navigation
-nav.navbar.navbar-default.navbar-fixed-top.topnav role="navigation" 
+nav.navbar.navbar-inverse.navbar-fixed-top.topnav role="navigation" 
   .container.topnav
     /! Brand and toggle get grouped for better mobile display
     .navbar-header
@@ -8,7 +8,14 @@ nav.navbar.navbar-default.navbar-fixed-top.topnav role="navigation"
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'Start Bootstrap', root_path, class: 'navbar-brand topnav'
+      = link_to 'golden store', root_path, class: 'navbar-brand topnav'
+    form.navbar-form.navbar-left
+      .input-group.add-on
+        input#srch-term.form-control name="srch-term" placeholder="Search" type="text"
+        .input-group-btn
+          button.btn.btn-default type="submit" 
+            i.glyphicon.glyphicon-search
+      
     /! Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
