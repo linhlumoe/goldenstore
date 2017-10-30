@@ -37,5 +37,7 @@ module Goldenstore
 
     # use sucker punch queue
     config.active_job.queue_adapter = :sucker_punch
+
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end

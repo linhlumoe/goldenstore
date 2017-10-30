@@ -1,0 +1,21 @@
+section.index
+  .container
+    h1.title Category List
+    .cat-raw-list
+      i.glyphicon.glyphicon-hand-right
+      = link_to " View category raw list", crawl_categories_categories_path
+    .table-responsive
+      table.table.table-bordered
+        tr
+          th ID
+          th Name
+          th Name Path
+          th ID Path
+        - @categories.each do |category|
+          tr
+            td = category[:external_id]
+            td = category[:name]
+            td = category[:name_path]
+            td = category[:id_path]
+      = paginate @categories
+
