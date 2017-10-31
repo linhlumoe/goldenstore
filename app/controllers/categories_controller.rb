@@ -5,10 +5,6 @@ class CategoriesController < ApplicationController
     @categories = Kaminari.paginate_array(@categories).page(params[:page]).per(30)
   end
 
-  def new
-    @category = Category.new
-  end
-
   def create
     @category = Category.new(category_params)
     if @category.save
