@@ -25,6 +25,7 @@
 //= require bootstrap-datetimepicker
 //= require bootstrap-sprockets
 //= require_self
+//= require products
 
 $(function() {
   $( ".select2" ).select2({

@@ -53,6 +53,30 @@ h6 {
   }
 }
 
+.index {
+  /* aside */
+  #accordion {
+    background: #F2F2F2;
+    .list-group {
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+    .panel-title {
+      a {
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+
+}
+/* content */
+.img-responsive, img {
+  height: 400px;
+  margin-top: 30px;
+}
+
 /* footer */
 footer {
   padding: 50px 0;

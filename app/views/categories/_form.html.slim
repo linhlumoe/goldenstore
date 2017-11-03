@@ -1,0 +1,18 @@
+/ - if @category.id == nil
+/   = provide(:title, 'New category')
+/   = provide(:button_text, 'Create')
+/ - else
+/   = provide(:title, 'Edit category')
+/   = provide(:button_text, 'Save changes')
+= form_for(@category) do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :parent_id
+    - if (@category.id == nil)
+      = select('category', 'parent_id', @categories.collect { |c| [c.name, c.id] }, { include_blank: true }, {class: 'form-control'})
+    - else
+      = select('category', 'parent_id', @categories.collect { |c| [c.name, c.id] }, { include_blank: true }, {class: 'form-control', disabled: ''})
+    center
+      = f.submit yield(:button_text), class: "btn btn-primary submit-form"

@@ -200,3 +200,5 @@ gem 'blazer'
 # DB GUID
 gem 'rails_db'
 gem 'rest-client', '~> 1.8'
+gem 'mini_magick'
+gem 'cancancan', '~> 2.0'

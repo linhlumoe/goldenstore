@@ -4,9 +4,9 @@ section.home
     = render 'layouts/breadcrumbs'
     .row
       .col-lg-3
-        = render 'aside'
-      .col-lg-9
-        = render 'content'
+        = render 'aside', categories: @categories
+      .col-lg-9.home-content
+        = render partial: 'content', locals: { newest_items: @newest_items, recommended_items: @recommended_items }
 
   /! /.row
 /! /.container

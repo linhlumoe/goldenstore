@@ -1,8 +1,6 @@
 FactoryGirl.define do
   factory :category do
     name { Faker::Name.name }
-    name_path { Faker::Name.name }
-    id_path {Faker::Number.number(5) + ' > ' + Faker::Number.number(5)}
-    external_id {Faker::Number.number(5)}
+    parent_id { Faker::Number.between(1, 20) }
   end
 end
