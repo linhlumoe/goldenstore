@@ -32,7 +32,7 @@ RSpec.describe CategoriesController, type: :controller do
     end
 
     context 'with invalid attributes' do
-      let(:category_params) { { external_id: '' } }
+      let(:category_params) { { name: '' } }
 
       it 'create new category unsuccessfully' do
         expect{do_request}.to_not change{Category.count}
