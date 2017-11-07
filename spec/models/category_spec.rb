@@ -7,11 +7,6 @@ RSpec.describe Category, type: :model do
   end
 
   describe 'validation' do
-    it { should validate_presence_of(:external_id) }
     it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:name_path) }
-    it { should validate_presence_of(:id_path) }
-    # it { should validate_presence_of(:industry) }
   end
 end
-

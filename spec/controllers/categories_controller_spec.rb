@@ -27,17 +27,17 @@ RSpec.describe CategoriesController, type: :controller do
       it 'create new category' do
         expect{do_request}.to change{Category.count}.from(0).to(1)
         expect(flash[:notice]).to eq 'Added category successfully.'
-        expect(response).to redirect_to crawl_categories_categories_path
+        expect(response).to redirect_to categories_path
       end
     end
 
     context 'with invalid attributes' do
-      let(:category_params) { { external_id: '' } }
+      let(:category_params) { { name: '' } }
 
       it 'create new category unsuccessfully' do
         expect{do_request}.to_not change{Category.count}
-        expect(flash[:notice]).to eq 'Added category unsuccessfully.'
-        expect(response).to redirect_to crawl_categories_categories_path
+        expect(flash[:alert]).to eq 'Added category unsuccessfully.'
+        expect(response).to render_template(:new)
       end
     end
   end

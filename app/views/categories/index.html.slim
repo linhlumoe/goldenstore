@@ -1,21 +1,25 @@
 section.index
   .container
     h1.title Category List
-    .cat-raw-list
+    .create-btn
       i.glyphicon.glyphicon-hand-right
-      = link_to " View category raw list", crawl_categories_categories_path
+      = link_to ' Create new category', new_category_path
+    / .cat-form.hidden
+    /   = render 'form'
     .table-responsive
       table.table.table-bordered
         tr
-          th ID
           th Name
-          th Name Path
-          th ID Path
+          th Parent Category
+          th colspan = '2' Manage
         - @categories.each do |category|
           tr
-            td = category[:external_id]
             td = category[:name]
-            td = category[:name_path]
-            td = category[:id_path]
+            td = category[:parent_id]
+            td
+              = link_to 'Edit', edit_category_path(category)
+            td
+              = link_to 'Delete', category, method: :delete,
+                                  data: { confirm: "Are you sure?" }
       = paginate @categories
 

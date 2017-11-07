@@ -1,0 +1,19 @@
+.wrapper.row
+  .preview.col-md-4
+    .preview-pic.tab-content
+      = image_tag(product.image_url, alt: product[:title])
+  .details.col-md-6
+    h2.product-title = product.title
+    br/
+    h4.product-description = product.description
+    br/
+    h4 = "Price: $ #{product.price}"
+    h4 = "Publisher: #{product.brand}"
+    h4 = "Author: #{product.author}"
+    h4 = "Category: #{product.category.name}"
+    form.form action="#" enctype="multipart/form-data" method="post" role="form"
+      .form-inline
+        label for="" style="font-size:16px;"  Quantity:
+        input.form-control min="1" name="num_quantity" style="font-weight:bold;" type="number" value="1" /
+      .action align="center" style="margin-top:30px;"
+        button.btn.btn-success name="addtocart" type="submit"  ADD TO CART

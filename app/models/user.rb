@@ -25,11 +25,11 @@
 #
 
 class User < ActiveRecord::Base
-  enum role: [:user, :vip, :admin]
+  enum role: [:visitor, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
-    self.role ||= :user
+    self.role ||= :visitor
   end
 
   # Include default devise modules. Others available are:
@@ -41,13 +41,5 @@ class User < ActiveRecord::Base
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
-  end
-
-  def self.admin
-    where(admin: true).first
-  end
-
-  def admin?
-    admin
   end
 end

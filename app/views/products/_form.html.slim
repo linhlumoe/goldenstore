@@ -1,0 +1,23 @@
+= form_for(@product) do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :brand
+    = f.text_field :brand, class: 'form-control'
+  .form-group
+    = f.label :author
+    = f.text_field :author, class: 'form-control'
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: 'form-control'
+  .form-group
+    = f.label :price
+    = f.text_field :price, class: 'form-control'
+  .form-group
+    = f.label :category_id
+    = f.select :category_id, @categories.collect { |c| [c.name, c.id] }, { include_blank: true }, {class: 'form-control'}
+  = image_tag(@product.image_url, alt: @product[:title])
+  center
+    = f.file_field :image, accept: 'image/jpeg,image/gif,image/png'
+    = f.submit yield(:button_text), class: "btn btn-primary submit-form"

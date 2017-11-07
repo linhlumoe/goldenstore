@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
+
   # post 'category/create'
-  resources :categories do
-    collection do
-      get :crawl_categories
-    end
-  end
+  resources :categories
+
+  resources :products
 
   devise_for :users
 

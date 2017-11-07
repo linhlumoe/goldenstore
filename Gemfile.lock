@@ -81,6 +81,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
+    cancancan (2.0.0)
     capybara (2.14.4)
       addressable
       mime-types (>= 1.16)
@@ -252,6 +253,7 @@ GEM
       actionpack (>= 3.2.0, < 5.2)
     method_source (0.8.2)
     mime-types (2.99.3)
+    mini_magick (4.8.0)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     momentjs-rails (2.17.1)
@@ -514,6 +516,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails
   bullet
   byebug
+  cancancan (~> 2.0)
   capybara
   carrierwave (>= 1.0.0.beta, < 2.0)
   chartkick
@@ -553,6 +556,7 @@ DEPENDENCIES
   listen
   mail_form
   meta-tags
+  mini_magick
   momentjs-rails
   money-rails
   nestive

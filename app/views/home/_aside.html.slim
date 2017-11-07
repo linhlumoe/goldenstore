@@ -1,7 +1,21 @@
-section.aside
-  h1.my-4 Category
-  .list-group
-    a.list-group-item href="#"  Category 1
-    a.list-group-item href="#"  Category 2
-    a.list-group-item href="#"  Category 3
-/! /.col-lg-3P
+h1.my-4 Category
+#accordion.panel-group
+  - var_id = 0
+  - categories.each do |category|
+    - if category.subcategories.count > 0
+      .panel.panel-default
+        .panel-heading
+          .panel-title
+            a data-parent='#accordion' data-toggle='collapse' href="#cat-#{var_id}" = category.name
+        .panel-collapse.collapse id="cat-#{var_id}"
+          ul.list-group
+            - category.subcategories.each do |subcat|
+              = link_to subcat.name, products_path(cat_id: subcat.id), remote: true, class: 'list-group-item'
+            - var_id += 1
+    - else
+      .panel.panel-default
+        .panel-heading
+          .panel-title
+            a data-parent='#accordion' data-toggle='collapse' href='#a' = category.name
+
+

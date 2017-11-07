@@ -1,0 +1,8 @@
+section.show
+  .container
+    = render 'layouts/breadcrumbs'
+    .row
+      .col-lg-3
+        = render 'home/aside', categories: @categories
+      .col-lg-9
+        = render 'product', product: @product

@@ -2,9 +2,7 @@ class CreateCategories < ActiveRecord::Migration
   def change
     create_table :categories do |t|
       t.string :name
-      t.string :name_path
-      t.string :id_path
-      t.integer :external_id
+      t.integer :parent_id
 
       t.timestamps null: false
     end

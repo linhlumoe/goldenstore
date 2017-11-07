@@ -1,0 +1,4 @@
+section.category_list
+  .span3.chardin_box data-position='top'
+  label Category:
+  = select('post', 'id', @categories.collect { |c| [c.name, c.name] }, { include_blank: true })
