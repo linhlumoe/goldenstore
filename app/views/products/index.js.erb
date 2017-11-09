@@ -1,1 +1,1 @@
-$('.product-grid').html("<%= escape_javascript(render partial: 'products/product_list', locals: { items: @products }) %>");
+$('.product-grid').html("<%= escape_javascript(render partial: 'products/product_list', locals: { items: @products, order_item: @order_item }) %>");

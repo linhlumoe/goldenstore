@@ -1,15 +1,15 @@
 .product-grid
   = provide(:category, 'Recommended Items')
-  = render partial: 'products/product_list', locals: {items: recommended_items}
+  = render partial: 'products/product_list', locals: { items: recommended_items, order_item: order_item }
   /! /.row
   h1.my-4 Newest Items
   - newest_items.each do |item|
     .row
-      .col-lg-4.col-md-6.mb-
+      .col-lg-4.col-md-6.mb-4
         .card.h-100
           = link_to item do
             = image_tag(item.image_url, alt: item[:title], class: 'card-img-top')
-      .col-lg-8.col-md-6.mb-8
+      .col-lg-4.col-md-6.mb-4
         .card-body
           h4.card-title
             = link_to item.title, item
@@ -17,7 +17,15 @@
           h5 = "Publisher: #{item.brand}"
           h5 = "Author: #{item.author}"
         .card-footer
-          small.text-muted ★ ★ ★ ★ ☆
+          = form_for order_item, remote: true do |f|
+            h4.text-left
+              | Unit Price:
+              span style=("color: green") = number_to_currency item.price
+            .input-group
+              = f.number_field :quantity, value: 1, class: "form-control", min: 1
+              .input-group-btn
+                = f.hidden_field :product_id, value: item.id
+                = f.submit "Add to Cart", class: "btn btn-primary"
     br/
 
 /! /.row

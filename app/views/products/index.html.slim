@@ -18,11 +18,11 @@ section.index
         - @products.each do |product|
           tr
             td = product.title
-            td = product[:brand]
-            td = product[:author]
-            td = product[:description]
-            td = product[:price]
-            td = product[:category_id]
+            td = product.brand
+            td = product.author
+            td = product.description
+            td = product.price
+            td = product.category_id
             td = image_tag(product.image_url(:thumbnail), alt: product[:title])
             td
               = link_to 'Edit', edit_product_path(product)

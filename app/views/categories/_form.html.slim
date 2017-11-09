@@ -11,8 +11,8 @@
     .form-group
       = f.label :parent_id
     - if (@category.id == nil)
-      = select('category', 'parent_id', @categories.collect { |c| [c.name, c.id] }, { include_blank: true }, {class: 'form-control'})
+      = select('category', 'parent_id', @categories.collect { |c| [c.name, c.id] }, { include_blank: true }, { class: 'form-control' })
     - else
-      = select('category', 'parent_id', @categories.collect { |c| [c.name, c.id] }, { include_blank: true }, {class: 'form-control', disabled: ''})
+      = select('category', 'parent_id', @categories.collect { |c| [c.name, c.id] }, { include_blank: true }, { class: 'form-control', disabled: '' })
     center
       = f.submit yield(:button_text), class: "btn btn-primary submit-form"
