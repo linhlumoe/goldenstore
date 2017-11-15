@@ -26,6 +26,7 @@
 //= require bootstrap-sprockets
 //= require_self
 //= require products
+//= require social-share-button
 
 $(function() {
   $( ".select2" ).select2({

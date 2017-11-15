@@ -28,7 +28,7 @@ Rails.application.configure do
   config.assets.debug = true
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:4000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :letter_opener
   # Send email in development mode?
   config.action_mailer.perform_deliveries = true

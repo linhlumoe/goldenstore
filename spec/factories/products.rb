@@ -7,5 +7,6 @@ FactoryGirl.define do
     price { Faker::Number.decimal(2).to_f }
     image {}
     category
+    stock { Faker::Number.between(10, 50) }
   end
 end

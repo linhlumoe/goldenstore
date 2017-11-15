@@ -1,4 +1,4 @@
 = form_for @order do |f|
-  = select('order', 'order_status', options_for_select([ ['In Progress', "In Progress"], ['Placed', "Placed"], ['Shipping', "Shipping"], ['Done', "Done"], ['Cancel', "Cancel"] ]), {}, { class: 'form-control' })
+  = select('order', 'order_status', options_for_select(['In Progress', 'Placed', 'Shipping', 'Done', 'Cancel']), {}, { class: 'form-control' })
   center
     = f.submit 'Update', class: "btn btn-primary btn-sm submit-form"

@@ -9,5 +9,6 @@ class Product < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  scope :starts_with, -> (title) { where("title like ?", "%#{title}%") }
+  scope :starts_with, -> (title) { where("title ilike ?", "%#{title}%") }
+
 end

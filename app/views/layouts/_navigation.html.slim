@@ -9,12 +9,11 @@ nav.navbar.navbar-inverse.topnav role="navigation"
         span.icon-bar
         span.icon-bar
       = link_to 'golden store', root_path, class: 'navbar-brand topnav'
-    form.navbar-form.navbar-left
+    = form_tag(products_path, method: 'get', id: 'search-form', class: 'navbar-form navbar-left', remote: true)
       .input-group.add-on
-        input#srch-term.form-control name="srch-term" placeholder="Search" type="text"
+        = text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control'
         .input-group-btn
-          button.btn.btn-default type="submit"
-            i.glyphicon.glyphicon-search
+          = submit_tag "Search", class: 'form-control'
 
     /! Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse

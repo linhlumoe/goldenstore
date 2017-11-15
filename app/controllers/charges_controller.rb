@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   before_action :set_total, only: [:create, :new]
   before_action :user_login?, only: [:create, :new]
+  before_action :check_stock, only: [:create, :new]
 
   def new
   end
@@ -35,9 +36,12 @@ class ChargesController < ApplicationController
     end
 
     def user_login?
-      if !user_signed_in?
-        redirect_to new_user_session_path
-      end
+      redirect_to new_user_session_path unless user_signed_in?
+    end
+
+    def check_stock
+      # stock = current_order.order_items.product.stock
+      # placed_quantiy = Order.where(order_status: 'placed').sum(:quantity).group(order_items.product)
     end
 
 end

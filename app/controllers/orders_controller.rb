@@ -2,8 +2,8 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :update, :edit]
 
   def index
-    @orders = Order.all
-    @orders = Kaminari.paginate_array(@orders).page(params[:page]).per(30)
+    @orders_all = Order.all
+    @orders_all = Kaminari.paginate_array(@orders_all).page(params[:page]).per(30)
   end
 
   def show

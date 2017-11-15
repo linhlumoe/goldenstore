@@ -14,7 +14,7 @@ section.index
           th Update at
           th Status
           th colspan = '2' Manage
-        - @orders.each do |order|
+        - @orders_all.each do |order|
           tr
             td = order.id
             td = order.user_id

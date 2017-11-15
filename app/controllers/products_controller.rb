@@ -6,7 +6,13 @@ class ProductsController < ApplicationController
   before_action :set_order_item, only: [:index, :show]
 
   def index
-    @products = params[:cat_id] ? Product.where(category_id: params[:cat_id]) : Product.all
+    if params[:cat_id]
+      @products = Product.where(category_id: params[:cat_id])
+    elsif params[:search]
+      @products = Product.starts_with(params[:search])
+    else
+      @products = Product.all
+    end
     @products = Kaminari.paginate_array(@products).page(params[:page]).per(30)
     respond_to do |format|
       format.html
@@ -47,6 +53,10 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to products_path, notice: 'Deleted product successfully.'
+  end
+
+  def search
+    @products = Product.starts_with(params[:search])
   end
 
   private

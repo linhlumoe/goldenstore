@@ -4,6 +4,8 @@ class Order < ActiveRecord::Base
   before_create :set_order_status
   before_save :update_subtotal
 
+  enum status: [:in_progress, :placed, :shipping, :done, :cancel]
+
   def subtotal
     order_items.collect { |item| item.valid? ? (item.unit_price * item.quantity) : 0 }.sum
   end
@@ -21,4 +23,7 @@ class Order < ActiveRecord::Base
       self.total = self.subtotal
     end
 
+    def send_order_confirm_email
+      OrderMailer.confirm_order(self).deliver_now
+    end
 end
