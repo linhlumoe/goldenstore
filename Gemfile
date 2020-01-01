@@ -119,7 +119,7 @@ gem 'friendly_id', '~> 5.1.0'
 # gem 'gibbon'
 
 # payment gateway
-# gem 'stripe'
+gem 'stripe'
 # online exchange rate
 # gem 'eu_central_bank'
 
@@ -202,3 +202,5 @@ gem 'rails_db'
 gem 'rest-client', '~> 1.8'
 gem 'mini_magick'
 gem 'cancancan', '~> 2.0'
+gem 'social-share-button'
+gem 'gretel'

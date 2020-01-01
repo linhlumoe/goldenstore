@@ -1,0 +1,31 @@
+section.show-by-user
+  .container
+    h1.title My Orders
+    .table-responsive
+      table.table.table-bordered
+        tr
+          th ID
+          th Customter
+          th Subtotal
+          th Tax
+          th Shipping
+          th Total
+          th Create at
+          th Update at
+          th Status
+          th View
+        - @orders.each do |order|
+          tr
+            td = order.id
+            td = order.user.name
+            td = number_to_currency order.subtotal
+            td = number_to_currency order.tax
+            td = number_to_currency order.shipping
+            td = number_to_currency order.total
+            td = order.created_at.to_formatted_s(:db)
+            td = order.updated_at.to_formatted_s(:db)
+            td.order-status
+              = order.order_status
+            td
+              = link_to 'Details', order_path(order)
+

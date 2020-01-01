@@ -1,0 +1,34 @@
+section.show
+  .container
+    .wrapper.row
+      .preview.col-md-6
+        h2 = "Order # #{@order.id}"
+        h4 = "Customter: #{ @order.user.try(:name) }"
+        h4 = "Subtotal: #{number_to_currency @order.subtotal}"
+        h4 = "Tax: #{number_to_currency @order.tax}"
+        h4 = "Shipping fee: #{number_to_currency @order.shipping}"
+        h4 = "Total: #{number_to_currency @order.total}"
+        h4 = "Order status: #{@order.order_status}"
+        h4 = "Created at: #{@order.created_at.to_formatted_s(:db)}"
+        h4 = "Last modified: #{@order.updated_at.to_formatted_s(:db)}"
+      .details.col-md-6
+        h2 Details
+        .table-responsive
+          table.table.table-bordered
+            tr
+              th ID
+              th Product
+              th Image
+              th Unit Price
+              th Quantity
+              th Total Price
+            - @order_items.each do |item|
+              tr
+                td = item.id
+                td = item.product.try(:title)
+                td = image_tag(item.product.image_url(:thumbnail), alt: item.product[:title], class: 'img-cart')
+                td = item.unit_price
+                td = item.quantity
+                td = item.total_price
+
+

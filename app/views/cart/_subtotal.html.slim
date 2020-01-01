@@ -1,0 +1,13 @@
+h4.text-right
+  | Subtotal:
+  span style=("color: green") = number_to_currency current_order.subtotal
+  br/
+  | Tax:
+  span style=("color: green") = number_to_currency current_order.tax
+  br/
+  | Shipping Fee:
+  span style=("color: green") = number_to_currency current_order.shipping
+  br/
+  | Total:
+  span style=("color: green") = number_to_currency current_order.total
+  br/

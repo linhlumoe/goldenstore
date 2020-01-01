@@ -13,3 +13,13 @@
 .product-description {
   text-align: justify;
 }
+
+$size: 32px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}

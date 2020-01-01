@@ -26,7 +26,8 @@ images = ['book-1', 'book-2', 'book-3', 'book-4', 'book-5', 'book-6', 'book-7', 
     author: Faker::Book.author,
     description: Faker::Lorem.paragraph,
     price: Faker::Number.decimal(2),
-    category: categories.sample
+    category: categories.sample,
+    stock: Faker::Number.between(10, 100)
   )
   product.image = Rails.root.join("db/images/#{images.sample}.jpg").open
   product.save!
